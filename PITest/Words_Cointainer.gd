@@ -43,6 +43,16 @@ func hasLetter(indexArr, letter, arr): #quero percorrer o array e usar o index p
 #func _process(delta):
 #	pass
 
-
+func addLetters(word, letter, arr, index):
+	
+	var word1 = arr[index] 
+	var count = 0
+	
+	for i in word:
+		if i == '_' && word1[count] == letter:
+			word[count] = letter
+			
+		count += 1	
+	return word
 
 
