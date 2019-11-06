@@ -27,10 +27,6 @@ func _ready():
 	#var randomF = rng.randi_range(0, arrFacil.size() - 1)
 	#var randomM = rng.randi_range(0, arrMedio.size() - 1)
 	#var randomD = rng.randi_range(0, arrDificil.size() - 1)
-	print(randomWord())
-	print(lettersToArray())
-	print(displayStartWord())
-	print(hasLetter('t'))
 	
 #Mete a String que queremos adivinhar num array 
 func lettersToArray():
@@ -40,6 +36,16 @@ func lettersToArray():
 func displayStartWord():
 	for i in word:
 		hiddenWord.append('_ ')
+		
+func consecutiveLetter(letter):
+	
+	var count = 0
+	
+	while(hasLetter(letter) == true):
+		count += 1
+	
+	return count
+
 
 func hasLetter(letter):
 	var count = 0
@@ -58,7 +64,25 @@ func randomWord():
 
 func arrayToString():
 	word = PoolStringArray(hiddenWord).join("")
- 
+	
+	
+func points(letter):
+	var point = 0;
+	
+	if consecutiveLetter(letter) == 1:
+		point = 10
+	elif consecutiveLetter(letter) == 2:
+		point = point * 0.2 + 10
+	elif consecutiveLetter(letter) == 3:
+		point = point * 0.4 + 10
+	elif consecutiveLetter(letter) == 4:
+		point = point * 0.6 + 10
+	elif consecutiveLetter(letter) >= 5:
+		point = point * 0.8 + 10
+		 	
+	if !hasLetter(letter):
+		point = point * 0.35 - 5
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #   pass
