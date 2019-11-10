@@ -88,6 +88,9 @@ func points(letter):
 #   pass
 
 
+
+
+#https://github.com/bitwes/Gut
 #adicionamos a função que calcula os pontos
 #Continuamos a Interface do jogo (mostra o que la esta) em cima titulo, onde esta KMS irá aparecer a palavra
 #por fim se conseguirem tenta fazer uma label paa depois se verem os pontos no ecram sff
