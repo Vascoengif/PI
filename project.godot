@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Forca"
-run/main_scene="res://Jogo_da_Forca.tscn"
+config/name="ForcaNovo1"
+run/main_scene="res://Pasta/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -26,5 +26,5 @@ window/size/height=720
 
 [rendering]
 
-environment/default_clear_color=Color( 0.384314, 0.12549, 0.694118, 1 )
+environment/default_clear_color=Color( 0.156863, 0.254902, 0.317647, 1 )
 environment/default_environment="res://default_env.tres"
