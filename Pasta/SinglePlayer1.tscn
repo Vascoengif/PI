@@ -207,14 +207,14 @@ margin_right = 49.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="A" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "A"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+[node name="N" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -228,14 +228,14 @@ margin_right = 102.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+[node name="B" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 4 )
 text = "B"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
+[node name="O" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -249,14 +249,14 @@ margin_right = 155.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+[node name="C" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
 text = "C"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
+[node name="P" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -270,14 +270,14 @@ margin_right = 208.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+[node name="D" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 8 )
 text = "D"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
+[node name="Q" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -291,14 +291,14 @@ margin_right = 261.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+[node name="E" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 10 )
 text = "E"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
+[node name="R" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -312,14 +312,14 @@ margin_right = 314.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+[node name="F" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 12 )
 text = "F"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
+[node name="S" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -333,14 +333,14 @@ margin_right = 367.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+[node name="G" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 14 )
 text = "G"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
+[node name="T" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -354,14 +354,14 @@ margin_right = 420.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+[node name="H" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 16 )
 text = "H"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
+[node name="U" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -375,14 +375,14 @@ margin_right = 473.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+[node name="I" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
 text = "I"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
+[node name="V" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -396,14 +396,14 @@ margin_right = 530.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer10"]
+[node name="J" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer10"]
 margin_right = 53.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 20 )
 text = "J"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer10"]
+[node name="W" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer10"]
 margin_top = 102.0
 margin_right = 53.0
 margin_bottom = 200.0
@@ -417,14 +417,14 @@ margin_right = 583.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer11"]
+[node name="K" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer11"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 22 )
 text = "K"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer11"]
+[node name="X" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer11"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -438,14 +438,14 @@ margin_right = 636.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer12"]
+[node name="L" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer12"]
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 24 )
 text = "L"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer12"]
+[node name="Y" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer12"]
 margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
@@ -459,14 +459,14 @@ margin_right = 698.0
 margin_bottom = 200.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer13"]
+[node name="M" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer13"]
 margin_right = 58.0
 margin_bottom = 98.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 26 )
 text = "M"
 
-[node name="Button2" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer13"]
+[node name="Z" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer13"]
 margin_top = 102.0
 margin_right = 58.0
 margin_bottom = 200.0
@@ -474,3 +474,29 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 27 )
 text = "Z"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/N" to="." method="_on_N_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer2/B" to="." method="_on_B_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer2/O" to="." method="_on_O_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer3/C" to="." method="_on_C_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer3/P" to="." method="_on_P_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer4/D" to="." method="_on_D_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer4/Q" to="." method="_on_Q_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer5/E" to="." method="_on_E_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer5/R" to="." method="_on_R_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer6/F" to="." method="_on_F_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer6/S" to="." method="_on_S_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer7/G" to="." method="_on_G_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer7/T" to="." method="_on_T_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer8/H" to="." method="_on_H_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer8/U" to="." method="_on_U_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer9/I" to="." method="_on_I_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer9/V" to="." method="_on_V_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer10/J" to="." method="_on_J_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer10/W" to="." method="_on_W_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer11/K" to="." method="_on_K_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer11/X" to="." method="_on_X_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer12/L" to="." method="_on_L_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer12/Y" to="." method="_on_Y_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/M" to="." method="_on_M_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/Z" to="." method="_on_Z_pressed"]

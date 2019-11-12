@@ -154,3 +154,55 @@ func _on_Button_pressed():
 #func _on_M_pressed():
 #	check_word_for_letter("m")
 #	$HBoxContainer/VboxContainer13/M.disabled = true
+
+#func _on_N_pressed():
+#	check_word_for_letter("n")
+#	$HBoxContainer/VboxContainer/N.disabled = true
+	
+#func _on_O_pressed():
+#	check_word_for_letter("o")
+#	$HBoxContainer/VboxContainer2/O.disabled = true
+
+#func _on_P_pressed():
+#	check_word_for_letter("p")
+#	$HBoxContainer/VboxContainer3/P.disabled = true
+
+#func _on_Q_pressed():
+#	check_word_for_letter("q")
+#	$HBoxContainer/VboxContainer4/Q.disabled = true
+
+#func _on_R_pressed():
+#	check_word_for_letter("r")
+#	$HBoxContainer/VboxContainer5/R.disabled = true
+
+#func _on_S_pressed():
+#	check_word_for_letter("s")
+#	$HBoxContainer/VboxContainer6/S.disabled = true
+
+#func _on_T_pressed():
+#	check_word_for_letter("t")
+#	$HBoxContainer/VboxContainer7/T.disabled = true
+
+#func _on_U_pressed():
+#	check_word_for_letter("u")
+#	$HBoxContainer/VboxContainer8/U.disabled = true
+
+#func _on_V_pressed():
+#	check_word_for_letter("v")
+#	$HBoxContainer/VboxContainer9/V.disabled = true
+
+#func _on_W_pressed():
+#	check_word_for_letter("w")
+#	$HBoxContainer/VboxContainer10/W.disabled = true
+
+#func _on_X_pressed():
+#	check_word_for_letter("x")
+#	$HBoxContainer/VboxContainer11/X.disabled = true
+
+#func _on_Y_pressed():
+#	check_word_for_letter("y")
+#	$HBoxContainer/VboxContainer12/Y.disabled = true
+
+#func _on_Z_pressed():
+#	check_word_for_letter("z")
+#	$HBoxContainer/VboxContainer13/Z.disabled = true
