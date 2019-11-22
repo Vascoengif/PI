@@ -1,182 +1,403 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://Pasta/SinglePlayer1.gd" type="Script" id=1]
-[ext_resource path="res://SuperMario256.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://SuperMario256.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Images/Hangman_Images/hangman0.png" type="Texture" id=2]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+func _on_Button_pressed():
+	get_tree().change_scene('res://Pasta/TitleScreen.tscn')
+
+
+
+
+var list = [\"carro\",\"torneio\",\"banana\",\"relogio\",\"caneca\",\"flor\",\"garfo\",\"oculos\",\"laranja\",\"computador\",\"informatica\"]
+var selected_word
+var selected_word_breakdown = []
+var letters_needed
+var hidden_word = []
+var hangman_lives = 0
+var secret_word
+
+func _ready():
+	randomize()
+	new_game()
+
+
+func new_game():
+	choose_random_word()
+	breakdown_random_word()
+	prepare_hidden_word()
+	convert_to_string()
+
+
+func choose_random_word():
+	selected_word = list[randi()%list.size()]
+	print(selected_word)
+
+
+
+func breakdown_random_word():
+	for letters in selected_word:
+		selected_word_breakdown.append(letters)
+
+
+func prepare_hidden_word():
+	for letters in selected_word:
+		hidden_word.append(\"_ \")
+
+
+
+func check_word_for_letter(_single_letter):
+	var count = 0
+	var letter_found1 = false
+	for i in selected_word_breakdown:
+		if _single_letter == i:
+			hidden_word[count] = i+\" \"
+			letter_found1 = true
+		count += 1
+		convert_to_string()
+	if !letter_found1:
+		check_win_condition()
+
+
+
+
+func convert_to_string():
+	secret_word = PoolStringArray(hidden_word).join(\"\")
+	$CenterContainer/HBoxContainer2/VBoxContainer/HiddenWordText.text = secret_word
+
+
+
+func check_win_condition():
+	var word1 = secret_word
+	var word2 = selected_word
+	var word3 = []
+	var word4
+	for i in word1:
+		if !i == \" \":
+			word3.append(i)
+	word4 = PoolStringArray(word3).join(\"\")
+	if word4 == word2:
+		end_game()
+
+
+
+
+func end_game():
+	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
+
+
+
+
+
+
+func check_for_hangman():
+	hangman_lives += 1
+	if hangman_lives >= 8:
+		end_game()
+	else:
+		var hangman_image_address = \"res://Images/Hangman_Images/hangman\"+str(hangman_lives)+\".png\"
+		$MarginContainer/Area_Guess/HBoxContainer/HangManImage.texture = load(hangman_image_address)
+
+
+#----------------------------------------------------------------------------------------------------------------------------
+
+
+func _on_A_pressed():
+	check_word_for_letter(\"a\")
+	$HBoxContainer/VboxContainer/A.disabled = true
+
+func _on_B_pressed():
+	check_word_for_letter(\"b\")
+	$HBoxContainer/VboxContainer2/B.disabled = true
+
+func _on_C_pressed():
+	check_word_for_letter(\"c\")
+	$HBoxContainer/VboxContainer3/C.disabled = true
+
+func _on_D_pressed():
+	check_word_for_letter(\"d\")
+	$HBoxContainer/VboxContainer4/D.disabled = true
+
+func _on_E_pressed():
+	check_word_for_letter(\"e\")
+	$HBoxContainer/VboxContainer5/E.disabled = true
+
+func _on_F_pressed():
+	check_word_for_letter(\"f\")
+	$HBoxContainer/VboxContainer6/F.disabled = true
+
+func _on_G_pressed():
+	check_word_for_letter(\"g\")
+	$HBoxContainer/VboxContainer7/G.disabled = true
+
+func _on_H_pressed():
+	check_word_for_letter(\"h\")
+	$HBoxContainer/VboxContainer8/H.disabled = true
+
+func _on_I_pressed():
+	check_word_for_letter(\"i\")
+	$HBoxContainer/VboxContainer9/I.disabled = true
+
+func _on_J_pressed():
+	check_word_for_letter(\"j\")
+	$HBoxContainer/VboxContainer10/J.disabled = true
+
+func _on_K_pressed():
+	check_word_for_letter(\"k\")
+	$HBoxContainer/VboxContainer11/K.disabled = true
+
+func _on_L_pressed():
+	check_word_for_letter(\"l\")
+	$HBoxContainer/VboxContainer12/L.disabled = true
+
+func _on_M_pressed():
+	check_word_for_letter(\"m\")
+	$HBoxContainer/VboxContainer13/M.disabled = true
+
+func _on_N_pressed():
+	check_word_for_letter(\"n\")
+	$HBoxContainer/VboxContainer/N.disabled = true
+
+func _on_O_pressed():
+	check_word_for_letter(\"o\")
+	$HBoxContainer/VboxContainer2/O.disabled = true
+
+func _on_P_pressed():
+	check_word_for_letter(\"p\")
+	$HBoxContainer/VboxContainer3/P.disabled = true
+
+func _on_Q_pressed():
+	check_word_for_letter(\"q\")
+	$HBoxContainer/VboxContainer4/Q.disabled = true
+
+func _on_R_pressed():
+	check_word_for_letter(\"r\")
+	$HBoxContainer/VboxContainer5/R.disabled = true
+
+func _on_S_pressed():
+	check_word_for_letter(\"s\")
+	$HBoxContainer/VboxContainer6/S.disabled = true
+
+func _on_T_pressed():
+	check_word_for_letter(\"t\")
+	$HBoxContainer/VboxContainer7/T.disabled = true
+
+func _on_U_pressed():
+	check_word_for_letter(\"u\")
+	$HBoxContainer/VboxContainer8/U.disabled = true
+
+func _on_V_pressed():
+	check_word_for_letter(\"v\")
+	$HBoxContainer/VboxContainer9/V.disabled = true
+
+func _on_W_pressed():
+	check_word_for_letter(\"w\")
+	$HBoxContainer/VboxContainer10/W.disabled = true
+
+func _on_X_pressed():
+	check_word_for_letter(\"x\")
+	$HBoxContainer/VboxContainer11/X.disabled = true
+
+func _on_Y_pressed():
+	check_word_for_letter(\"y\")
+	$HBoxContainer/VboxContainer12/Y.disabled = true
+
+func _on_Z_pressed():
+	check_word_for_letter(\"z\")
+	$HBoxContainer/VboxContainer13/Z.disabled =true
+
+
+
+
+
+
+"
+
+[sub_resource type="DynamicFont" id=2]
 size = 20
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=16]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=18]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=19]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=20]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=21]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=22]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=23]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=24]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=25]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=26]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=27]
 size = 40
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 80
+font_data = ExtResource( 1 )
 
 [node name="Single Player" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+margin_left = -1.36037
+margin_top = 1.36038
+margin_right = -1.36035
+margin_bottom = 1.36035
+script = SubResource( 1 )
 
 [node name="CenterContainer" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 206.046
-margin_top = 96.2991
-margin_right = 1133.05
-margin_bottom = 695.299
+margin_left = 248.0
+margin_top = 96.0
+margin_right = 1172.0
+margin_bottom = 685.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 1005.0
@@ -187,7 +408,7 @@ margin_bottom = 681.0
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_right = 196.0
 margin_bottom = 26.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Back"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -211,7 +432,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "A"
 
 [node name="N" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer"]
@@ -219,7 +440,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "N"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -232,7 +453,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "B"
 
 [node name="O" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer2"]
@@ -240,7 +461,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "O"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -253,7 +474,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "C"
 
 [node name="P" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer3"]
@@ -261,7 +482,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "P"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -274,7 +495,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "D"
 
 [node name="Q" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer4"]
@@ -282,7 +503,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "Q"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -295,7 +516,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "E"
 
 [node name="R" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer5"]
@@ -303,7 +524,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "R"
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -316,7 +537,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 text = "F"
 
 [node name="S" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer6"]
@@ -324,7 +545,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "S"
 
 [node name="VBoxContainer7" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -337,7 +558,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 text = "G"
 
 [node name="T" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer7"]
@@ -345,7 +566,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 text = "T"
 
 [node name="VBoxContainer8" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -358,7 +579,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 text = "H"
 
 [node name="U" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer8"]
@@ -366,7 +587,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "U"
 
 [node name="VBoxContainer9" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -379,7 +600,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
 text = "I"
 
 [node name="V" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer9"]
@@ -387,7 +608,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "V"
 
 [node name="VBoxContainer10" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -400,7 +621,7 @@ size_flags_horizontal = 3
 margin_right = 53.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "J"
 
 [node name="W" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer10"]
@@ -408,7 +629,7 @@ margin_top = 102.0
 margin_right = 53.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 22 )
 text = "W"
 
 [node name="VBoxContainer11" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -421,7 +642,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 22 )
+custom_fonts/font = SubResource( 23 )
 text = "K"
 
 [node name="X" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer11"]
@@ -429,7 +650,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
 text = "X"
 
 [node name="VBoxContainer12" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -442,7 +663,7 @@ size_flags_horizontal = 3
 margin_right = 49.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 25 )
 text = "L"
 
 [node name="Y" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer12"]
@@ -450,7 +671,7 @@ margin_top = 102.0
 margin_right = 49.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
 text = "Y"
 
 [node name="VBoxContainer13" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
@@ -463,7 +684,7 @@ size_flags_horizontal = 3
 margin_right = 58.0
 margin_bottom = 98.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 26 )
+custom_fonts/font = SubResource( 27 )
 text = "M"
 
 [node name="Z" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer13"]
@@ -471,8 +692,41 @@ margin_top = 102.0
 margin_right = 58.0
 margin_bottom = 200.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
 text = "Z"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 100.0
+margin_top = 250.0
+margin_right = 1000.0
+margin_bottom = 350.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer2"]
+margin_right = 900.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HiddenWordText" type="Label" parent="CenterContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 900.0
+margin_bottom = 100.0
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 29 )
+text = "        TEST"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 100.0
+margin_right = 1000.0
+margin_bottom = 220.0
+
+[node name="HangManImage" type="TextureRect" parent="CenterContainer/HBoxContainer3"]
+margin_right = 900.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/N" to="." method="_on_N_pressed"]
