@@ -6,7 +6,6 @@ func _on_Button_pressed():
 
 #----------------------------------------------------------------------------------------------------------------------------
 
-
 var list = ["carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
 var selected_word
 var selected_word_breakdown = []
@@ -101,7 +100,7 @@ func check_for_hangman():
 
 func _on_A_pressed():
 	check_word_for_letter("a")
-	$HBoxContainer/VboxContainer/A.disabled = true
+#	$HBoxContainer/VboxContainer/A.disabled = true
 
 func _on_B_pressed():
 	check_word_for_letter("b")
@@ -117,7 +116,7 @@ func _on_D_pressed():
 
 func _on_E_pressed():
 	check_word_for_letter("e")
-#	$HBoxContainer/VboxContainer5/E.disabled = false
+#	$HBoxContainer/VboxContainer5/E.disabled = true
 
 func _on_F_pressed():
 	check_word_for_letter("f")
