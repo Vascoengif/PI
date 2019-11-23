@@ -3,7 +3,6 @@ extends Node
 func _on_Button_pressed():
 	get_tree().change_scene('res://Pasta/TitleScreen.tscn')
 
-
 #----------------------------------------------------------------------------------------------------------------------------
 
 var list = [  "carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
@@ -17,7 +16,6 @@ var secret_word
 func _ready():
 	randomize()
 	new_game()
-
 
 func new_game():
 	choose_random_word()
@@ -35,7 +33,6 @@ func choose_random_word():
 func breakdown_random_word():
 	for letters in selected_word:
 		selected_word_breakdown.append(letters)
-
 
 func prepare_hidden_word():
 	for letters in selected_word:
@@ -56,14 +53,9 @@ func check_word_for_letter(_single_letter):
 		check_for_hangman()
 	check_win_condition()
 
-
-
-
 func convert_to_string():
 	secret_word = PoolStringArray(hidden_word).join("")
 	$CenterContainer/HBoxContainer2/VBoxContainer/HiddenWordText.text = secret_word
-
-
 
 func check_win_condition():
 	var word1 = secret_word
@@ -77,13 +69,8 @@ func check_win_condition():
 	if word4 == word2:
 		end_game()
 
-
-
 func end_game():
 	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
-
-
-
 
 func check_for_hangman():
 	hangman_lives += 1
@@ -93,9 +80,7 @@ func check_for_hangman():
 		var hangman_image_address = "res://Images/Hangman_Images/hangman"+str(hangman_lives)+".png"
 		$CenterContainer/HBoxContainer3/HangManImage.texture = load(hangman_image_address)
 
-
 #----------------------------------------------------------------------------------------------------------------------------
-
 
 func _on_A_pressed():
 	check_word_for_letter("a")
