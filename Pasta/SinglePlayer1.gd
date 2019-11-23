@@ -6,7 +6,6 @@ func _on_Button_pressed():
 
 #----------------------------------------------------------------------------------------------------------------------------
 
-
 var list = [  "carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
 var selected_word
 var selected_word_breakdown = []
