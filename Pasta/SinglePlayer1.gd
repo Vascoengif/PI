@@ -7,7 +7,7 @@ func _on_Button_pressed():
 #----------------------------------------------------------------------------------------------------------------------------
 
 
-var list = [  "carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
+var list = ["carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
 var selected_word
 var selected_word_breakdown = []
 var letters_needed
@@ -56,6 +56,7 @@ func check_word_for_letter(_single_letter):
 	if !letter_found1:
 		check_for_hangman()
 	check_win_condition()
+	
 
 
 
@@ -104,100 +105,100 @@ func _on_A_pressed():
 
 func _on_B_pressed():
 	check_word_for_letter("b")
-	$HBoxContainer/VboxContainer2/B.disabled = true
+#	$HBoxContainer/VboxContainer2/B.disabled = true
 
 func _on_C_pressed():
 	check_word_for_letter("c")
-	$HBoxContainer/VboxContainer3/C.disabled = true
+#	$HBoxContainer/VboxContainer3/C.disabled = true
 
 func _on_D_pressed():
 	check_word_for_letter("d")
-	$HBoxContainer/VboxContainer4/D.disabled = true
+#	$HBoxContainer/VboxContainer4/D.disabled = true
 
 func _on_E_pressed():
 	check_word_for_letter("e")
-	$HBoxContainer/VboxContainer5/E.disabled = false
+#	$HBoxContainer/VboxContainer5/E.disabled = false
 
 func _on_F_pressed():
 	check_word_for_letter("f")
-	$HBoxContainer/VboxContainer6/F.disabled = true
+#	$HBoxContainer/VboxContainer6/F.disabled = true
 
 func _on_G_pressed():
 	check_word_for_letter("g")
-	$HBoxContainer/VboxContainer7/G.disabled = true
+#	$HBoxContainer/VboxContainer7/G.disabled = true
 
 func _on_H_pressed():
 	check_word_for_letter("h")
-	$HBoxContainer/VboxContainer8/H.disabled = true
+#	$HBoxContainer/VboxContainer8/H.disabled = true
 
 func _on_I_pressed():
 	check_word_for_letter("i")
-	$HBoxContainer/VboxContainer9/I.disabled = true
+#	$HBoxContainer/VboxContainer9/I.disabled = true
 
 func _on_J_pressed():
 	check_word_for_letter("j")
-	$HBoxContainer/VboxContainer10/J.disabled = true
+#	$HBoxContainer/VboxContainer10/J.disabled = true
 
 func _on_K_pressed():
 	check_word_for_letter("k")
-	$HBoxContainer/VboxContainer11/K.disabled = true
+#	$HBoxContainer/VboxContainer11/K.disabled = true
 
 func _on_L_pressed():
 	check_word_for_letter("l")
-	$HBoxContainer/VboxContainer12/L.disabled = true
+#	$HBoxContainer/VboxContainer12/L.disabled = true
 
 func _on_M_pressed():
 	check_word_for_letter("m")
-	$HBoxContainer/VboxContainer13/M.disabled = true
+#	$HBoxContainer/VboxContainer13/M.disabled = true
 
 func _on_N_pressed():
 	check_word_for_letter("n")
-	$HBoxContainer/VboxContainer/N.disabled = true
+#	$HBoxContainer/VboxContainer/N.disabled = true
 
 func _on_O_pressed():
 	check_word_for_letter("o")
-	$HBoxContainer/VboxContainer2/O.disabled = true
+#	$HBoxContainer/VboxContainer2/O.disabled = true
 
 func _on_P_pressed():
 	check_word_for_letter("p")
-	$HBoxContainer/VboxContainer3/P.disabled = true
+#	$HBoxContainer/VboxContainer3/P.disabled = true
 
 func _on_Q_pressed():
 	check_word_for_letter("q")
-	$HBoxContainer/VboxContainer4/Q.disabled = true
+#	$HBoxContainer/VboxContainer4/Q.disabled = true
 
 func _on_R_pressed():
 	check_word_for_letter("r")
-	$HBoxContainer/VboxContainer5/R.disabled = true
+#	$HBoxContainer/VboxContainer5/R.disabled = true
 
 func _on_S_pressed():
 	check_word_for_letter("s")
-	$HBoxContainer/VboxContainer6/S.disabled = true
+#	$HBoxContainer/VboxContainer6/S.disabled = true
 
 func _on_T_pressed():
 	check_word_for_letter("t")
-	$HBoxContainer/VboxContainer7/T.disabled = true
+#	$HBoxContainer/VboxContainer7/T.disabled = true
 
 func _on_U_pressed():
 	check_word_for_letter("u")
-	$HBoxContainer/VboxContainer8/U.disabled = true
+#	$HBoxContainer/VboxContainer8/U.disabled = true
 
 func _on_V_pressed():
 	check_word_for_letter("v")
-	$HBoxContainer/VboxContainer9/V.disabled = true
+#	$HBoxContainer/VboxContainer9/V.disabled = true
 
 func _on_W_pressed():
 	check_word_for_letter("w")
-	$HBoxContainer/VboxContainer10/W.disabled = true
+#	$HBoxContainer/VboxContainer10/W.disabled = true
 
 func _on_X_pressed():
 	check_word_for_letter("x")
-	$HBoxContainer/VboxContainer11/X.disabled = true
+#	$HBoxContainer/VboxContainer11/X.disabled = true
 
 func _on_Y_pressed():
 	check_word_for_letter("y")
-	$HBoxContainer/VboxContainer12/Y.disabled = true
+#	$HBoxContainer/VboxContainer12/Y.disabled = true
 
 func _on_Z_pressed():
 	check_word_for_letter("z")
-	$HBoxContainer/VboxContainer13/Z.disabled =true
+#	$HBoxContainer/VboxContainer13/Z.disabled =true
