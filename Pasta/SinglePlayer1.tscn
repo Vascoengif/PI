@@ -206,6 +206,9 @@ func _on_Y_pressed():
 func _on_Z_pressed():
 	check_word_for_letter(\"z\")
 #	$HBoxContainer/VboxContainer13/Z.disabled =true
+
+
+
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -719,6 +722,16 @@ margin_bottom = 256.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 800.0
+margin_top = 30.0
+margin_right = 1000.0
+margin_bottom = 80.0
+
+[node name="Timer" type="Timer" parent="CenterContainer/HBoxContainer4"]
+wait_time = 0.01
+one_shot = true
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/N" to="." method="_on_N_pressed"]
@@ -746,3 +759,4 @@ texture = ExtResource( 2 )
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer12/Y" to="." method="_on_Y_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/M" to="." method="_on_M_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/Z" to="." method="_on_Z_pressed"]
+[connection signal="timeout" from="CenterContainer/HBoxContainer4/Timer" to="." method="_on_Timer_timeout"]

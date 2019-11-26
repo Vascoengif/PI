@@ -73,7 +73,8 @@ func check_win_condition():
 
 func end_game():
 	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
-
+	
+	
 func check_for_hangman():
 	hangman_lives += 1
 	if hangman_lives >= 8:
@@ -187,3 +188,21 @@ func _on_Y_pressed():
 func _on_Z_pressed():
 	check_word_for_letter("z")
 #	$HBoxContainer/VboxContainer13/Z.disabled =true
+
+
+#TIMER----------------------------------------------------------------------
+
+var s=0
+var m=0
+
+func _process(delta):
+	if s>9:
+		m+=1
+		s=0
+		
+#	set_text(str(m)+":"+str(s))
+	
+
+func _on_Timer_timeout():
+	s+=1
+	
