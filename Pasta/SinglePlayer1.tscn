@@ -71,7 +71,8 @@ func check_win_condition():
 		end_game()
 
 func end_game():
-	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
+		get_tree().reload_current_scene()
+	#$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
 
 func check_for_hangman():
 	hangman_lives += 1
@@ -383,12 +384,6 @@ margin_right = 196.0
 margin_bottom = 26.0
 custom_fonts/font = SubResource( 2 )
 text = "Back"
-
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 30.0
-margin_right = 196.0
-margin_bottom = 44.0
-text = "................................................."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
 margin_left = 300.0
