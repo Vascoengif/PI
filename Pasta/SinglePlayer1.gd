@@ -5,7 +5,6 @@ func _on_Button_pressed():
 
 #----------------------------------------------------------------------------------------------------------------------------
 
-
 var list = ["carro","torneio","banana","relogio","caneca","flor","garfo","oculos","laranja","computador","informatica"]
 var selected_word
 var selected_word_breakdown = []
@@ -29,7 +28,6 @@ func choose_random_word():
 	selected_word = list[randi()%list.size()]
 	print(selected_word)
 
-
 #cria um novo array com a palavra selecionada separando cada letra
 func breakdown_random_word():
 	for letters in selected_word:
@@ -38,8 +36,6 @@ func breakdown_random_word():
 func prepare_hidden_word():
 	for letters in selected_word:
 		hidden_word.append("_ ")
-
-
 
 func check_word_for_letter(_single_letter):
 	var count = 0
@@ -53,7 +49,6 @@ func check_word_for_letter(_single_letter):
 	if !letter_found1:
 		check_for_hangman()
 	check_win_condition()
-	
 
 func convert_to_string():
 	secret_word = PoolStringArray(hidden_word).join("")
@@ -73,8 +68,7 @@ func check_win_condition():
 
 func end_game():
 	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
-	
-	
+		
 func check_for_hangman():
 	hangman_lives += 1
 	if hangman_lives >= 8:
@@ -189,7 +183,6 @@ func _on_Z_pressed():
 	check_word_for_letter("z")
 #	$HBoxContainer/VboxContainer13/Z.disabled =true
 
-
 #TIMER----------------------------------------------------------------------
 
 var s=0
@@ -200,9 +193,7 @@ func _process(delta):
 		m+=1
 		s=0
 		
-#	set_text(str(m)+":"+str(s))
-	
+#set_text(str(m)+":"+str(s))
 
 func _on_Timer_timeout():
-	s+=1
-	
+	s+=1	
