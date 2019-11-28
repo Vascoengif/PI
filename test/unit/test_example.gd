@@ -1,27 +1,23 @@
 extends "res://addons/gut/test.gd"
-func before_each():
-	gut.p("ran before each", 2)
 
-func after_each():
-	gut.p("ran after each", 2)
+var singlePlayer = preload('res://Pasta/SinglePlayer1.gd')
 
-func before_all():
-	gut.p("ran before all", 2)
+func test_word_randomizer():
+	
+	var sp = singlePlayer.new()
+	
+	assert_eq(sp.selected_word, sp.choose_random_word(), "pass")
 
-func after_all():
-	gut.p("ran after all", 2)
+func test_hangman_lives_start():
+	
+	var sp = singlePlayer.new()
+	
+	assert_eq(0, sp.hangman_lives, "pass")
 
-func test_assert_eq_number_not_equal():
-	assert_eq(1, 2, "Should fail.  1 != 2")
+func test_array():
+	
+	var sp = singlePlayer.new()
+	
+	assert_eq(sp.list[0], "carro", "pass")
 
-func test_assert_eq_number_equal():
-	assert_eq('asdf', 'asdf', "Should pass")
 
-func test_assert_true_with_true():
-	assert_true(true, "Should pass, true is true")
-
-func test_assert_true_with_false():
-	assert_true(false, "Should fail")
-
-func test_something_else():
-	assert_true(false, "didn't work")
