@@ -67,8 +67,8 @@ func check_win_condition():
 		end_game()
 
 func end_game():
-	#$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
-	get_tree().reload_current_scene()
+	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
+	
 		
 		
 func check_for_hangman():

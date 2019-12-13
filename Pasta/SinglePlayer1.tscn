@@ -8,6 +8,11 @@ script/source = "extends Control
 
 func _on_Button_pressed():
 	get_tree().change_scene('res://Pasta/TitleScreen.tscn')
+	
+func _on_Button_pressed1():
+	get_tree().reload_current_scene()
+
+
 
 var list = [\"carro\",\"torneio\",\"banana\",\"relogio\",\"caneca\",\"flor\",\"garfo\",\"oculos\",\"laranja\",\"computador\",\"informatica\"]
 var selected_word
@@ -71,8 +76,7 @@ func check_win_condition():
 		end_game()
 
 func end_game():
-		get_tree().reload_current_scene()
-	#$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
+	$CenterContainer/HBoxContainer4/HBoxContainer/VBoxContainer/RestartButton.show()
 
 func check_for_hangman():
 	hangman_lives += 1
@@ -187,6 +191,9 @@ func _on_Y_pressed():
 func _on_Z_pressed():
 	check_word_for_letter(\"z\")
 #	$HBoxContainer/VboxContainer13/Z.disabled =true
+
+
+
 
 "
 
@@ -705,6 +712,22 @@ margin_bottom = 80.0
 [node name="Timer" type="Timer" parent="CenterContainer/HBoxContainer4"]
 wait_time = 0.01
 one_shot = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer4"]
+margin_bottom = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer4/HBoxContainer"]
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RestartButton" type="Button" parent="CenterContainer/HBoxContainer4/HBoxContainer/VBoxContainer"]
+visible = false
+margin_right = 57.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Restart"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/N" to="." method="_on_N_pressed"]
@@ -733,3 +756,4 @@ one_shot = true
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/M" to="." method="_on_M_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer13/Z" to="." method="_on_Z_pressed"]
 [connection signal="timeout" from="CenterContainer/HBoxContainer4/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer4/HBoxContainer/VBoxContainer/RestartButton" to="." method="_on_Button_pressed1"]
