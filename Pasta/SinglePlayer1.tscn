@@ -12,6 +12,8 @@ func _on_Button_pressed():
 func _on_Button_pressed1():
 	get_tree().reload_current_scene()
 
+
+
 var list = [\"carro\",\"torneio\",\"banana\",\"relogio\",\"caneca\",\"flor\",\"garfo\",\"oculos\",\"laranja\",\"computador\",\"informatica\"]
 var selected_word
 var selected_word_breakdown = []
@@ -190,7 +192,11 @@ func _on_Z_pressed():
 	check_word_for_letter(\"z\")
 #	$HBoxContainer/VboxContainer13/Z.disabled =true
 
+
+
+
 "
+
 [sub_resource type="DynamicFont" id=2]
 size = 20
 outline_size = 3

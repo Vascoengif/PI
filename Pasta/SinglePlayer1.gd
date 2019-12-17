@@ -22,17 +22,13 @@ func new_game():
 	breakdown_random_word()
 	prepare_hidden_word()
 	convert_to_string()
-	
-############################################
-##escolhe uma palavra random do array list##
-############################################
+
+#escolhe uma palavra random do array list
 func choose_random_word():
 	selected_word = list[randi()%list.size()]
 	print(selected_word)
 
-#####################################################################
-##cria um novo array com a palavra selecionada separando cada letra##
-#####################################################################
+#cria um novo array com a palavra selecionada separando cada letra
 func breakdown_random_word():
 	for letters in selected_word:
 		selected_word_breakdown.append(letters)
@@ -71,7 +67,9 @@ func check_win_condition():
 		end_game()
 
 func end_game():
-	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()	
+	$CenterContainer/VBoxContainer/HBoxContainer/RestartButton.show()
+	
+		
 		
 func check_for_hangman():
 	hangman_lives += 1
